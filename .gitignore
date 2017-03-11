@@ -2,7 +2,7 @@
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 /out/
-.data/
+..QOOj/
 
 ### STS ###
 .apt_generated

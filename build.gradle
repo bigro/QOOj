@@ -37,10 +37,10 @@ dependencies {
 
 jooq {
     version = '3.9.1'
-    matcheam(sourceSets.main) {
+    qooj(sourceSets.main) {
         jdbc {
             driver = 'org.h2.Driver'
-            url = 'jdbc:h2:file:./.QOOj/h2/db;MODE=MySQL;'
+            url = 'jdbc:h2:file:~/.QOOj/h2/db;MODE=MySQL;'
             user = 'sa'
             password = ''
         }

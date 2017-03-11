@@ -4,7 +4,7 @@ create table test1 (
 	date1 date,
 	date2 timestamp,
 	time1 time
-)
+);
 
 insert into test1 values(1, 'AAA', '2017-04-04', now(), '10:10:10');
 insert into test1 values(4, 'AAA', '2017-04-14', now(), '10:10:13');
