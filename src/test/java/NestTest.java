@@ -1,32 +1,22 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.tuple;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.jooq.DSLContext;
 import org.jooq.Record;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
 import org.junit.Test;
 
 import qooj.jooq.nest.Address;
 import qooj.jooq.nest.User;
+import support.TestContext;
 
 public class NestTest {
 
 	@Test
 	public void test() throws Exception {
-		String userName = "sa";
-		String password = "";
-		String url = "jdbc:h2:tcp://localhost:9092/qooj;MODE=MySQL;";
-
-		try (Connection conn = DriverManager.getConnection(url, userName, password)) {
-			DSLContext create = DSL.using(conn, SQLDialect.MYSQL);
-
-			List<Record> recordList = create
+		try (TestContext testContext = new TestContext()) {
+			List<Record> recordList = testContext.dslContext()
 				.select().from("QOOJ.NEST1")
 				.where("CODE = 1")
 				.fetch();
