@@ -21,7 +21,6 @@ public class NestTest {
 	public void test() throws Exception {
 		String userName = "sa";
 		String password = "";
-		// String url = "jdbc:h2:file:~/.QOOj/h2/db;MODE=MySQL;";
 		String url = "jdbc:h2:tcp://localhost:9092/qooj;MODE=MySQL;";
 
 		try (Connection conn = DriverManager.getConnection(url, userName, password)) {
