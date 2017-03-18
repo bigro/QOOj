@@ -38,7 +38,7 @@ public class TestContext implements AutoCloseable {
 
 	@Override
 	public void close() throws Exception {
-		connection.close();
 		dslContext.close();
+		connection.close();
 	}
 }
