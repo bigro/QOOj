@@ -1,4 +1,4 @@
-package qooj.jooq.nesst1;
+package qooj.jooq.nest;
 
 import org.jooq.Converter;
 

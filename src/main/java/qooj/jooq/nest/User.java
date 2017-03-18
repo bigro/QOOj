@@ -1,11 +1,11 @@
-package qooj.jooq.nesst1;
+package qooj.jooq.nest;
 
-public class Nest1 {
+public class User {
 	private int code;
 	private int nameId;
 	private Address address;
 
-	public Nest1(int code, int nameId, Address address) {
+	public User(int code, int nameId, Address address) {
 		super();
 		this.code = code;
 		this.nameId = nameId;

@@ -12,8 +12,8 @@ import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.junit.Test;
 
-import qooj.jooq.nesst1.Address;
-import qooj.jooq.nesst1.Nest1;
+import qooj.jooq.nest.Address;
+import qooj.jooq.nest.User;
 
 public class NestTest {
 
@@ -32,10 +32,10 @@ public class NestTest {
 				.where("CODE = 1")
 				.fetch();
 
-			LinkedList<Nest1> linkedList = new LinkedList<>();
+			LinkedList<User> linkedList = new LinkedList<>();
 			for (Record record : recordList) {
 				linkedList.add(
-					new Nest1(
+					new User(
 						record.getValue("CODE", int.class),
 						record.getValue("NAMEID", int.class),
 						record.getValue("ADDRESS", Address.converter())));
