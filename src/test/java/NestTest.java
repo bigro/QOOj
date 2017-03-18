@@ -1,16 +1,10 @@
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.tuple;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.jooq.DSLContext;
 import org.jooq.Record;
-import org.jooq.SQLDialect;
-import org.jooq.impl.DSL;
 import org.junit.Test;
 
 import qooj.jooq.nest.Address;
