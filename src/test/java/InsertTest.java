@@ -35,19 +35,20 @@ public class InsertTest {
 				.values(
 					new BigDecimal("101"), "テスト1", date, new Timestamp(333333L), new Time(555555L))
 				.execute();
+
 			Result<Record> result = testContext.dslContext()
-				.select().from("qooj.test1")
+				.select().from(TEST1)
 				.where("code = 101")
 				.fetch();
 
 			assertThat(result).hasSize(1);
 			Record record = result.get(0);
 			SoftAssertions soft = new SoftAssertions();
-			soft.assertThat(record.getValue("CODE", BigDecimal.class)).isEqualTo(new BigDecimal("101"));
-			soft.assertThat(record.getValue("NAME", String.class)).isEqualTo("テスト1");
-			soft.assertThat(record.getValue("DATE1", Date.class)).isEqualTo(date);
-			soft.assertThat(record.getValue("DATE2", Timestamp.class)).isEqualTo(new Timestamp(333333L));
-			soft.assertThat(record.getValue("TIME1", Time.class)).isEqualTo(new Time(555555L));
+			soft.assertThat(record.getValue(TEST1.CODE)).isEqualTo(new BigDecimal("101"));
+			soft.assertThat(record.getValue(TEST1.NAME)).isEqualTo("テスト1");
+			soft.assertThat(record.getValue(TEST1.DATE1)).isEqualTo(date);
+			soft.assertThat(record.getValue(TEST1.DATE2)).isEqualTo(new Timestamp(333333L));
+			soft.assertThat(record.getValue(TEST1.TIME1)).isEqualTo(new Time(555555L));
 			soft.assertAll();
 		}
 	}
